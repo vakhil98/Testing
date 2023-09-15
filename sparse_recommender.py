@@ -1,14 +1,18 @@
+import numpy as np
+
 class SparseMatrix:
     def __init__(self):
         self.data = {}
 
     def set(self, row, col, value):
-        if self.data.get((row, col)) != 0:
+        if self.data.get((row, col)) != 0 and value > 0:
             self.data[(row, col)] = value
-        elif value <= 0:
+        elif value < 0:
             raise ValueError("The value must be greater than 0.")
         elif value != 0:
             self.data[(row, col)] = value
+        else:
+            raise ValueError("Can't set value to 0.")
 
     def get(self, row, col):
         return self.data.get((row, col), 0)
@@ -18,6 +22,9 @@ class SparseMatrix:
         num_cols = self.num_cols()
         if num_rows != num_cols:
             raise ValueError("Matrix Multiplication not possible as the number of rows of the vector does not match the number of columns of the matrix.")
+        
+        
+
         result = [0] * num_rows
         for (row, col), value in self.data.items():
             result[row] += value * vector[col]
