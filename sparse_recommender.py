@@ -5,6 +5,8 @@ class SparseMatrix:
     def set(self, row, col, value):
         if self.data.get((row, col)) != 0:
             self.data[(row, col)] = value
+        elif value <= 0:
+            raise ValueError("The value must be greater than 0.")
         elif value != 0:
             self.data[(row, col)] = value
 
