@@ -38,6 +38,9 @@ def test_recommend(sample_matrix):
     vector_2 = [0, 1, 2]
     with pytest.raises(ValueError, match=r"Matrix Multiplication not possible as the number of rows of the vector does not match the number of columns of the matrix."):
         sample_matrix.recommend(vector_2)
+    # vector_3 = [[1, 0], [2, 3]]
+    # result_3 = sample_matrix.recommend(vector_3)
+    # assert result_3 == [[1, 0], [8, 9]]
 
 def test_add_movie(sample_matrix):
     new_matrix = SparseMatrix()

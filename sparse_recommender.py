@@ -18,16 +18,25 @@ class SparseMatrix:
         return self.data.get((row, col), 0)
 
     def recommend(self, vector):
-        num_rows = len(vector)
-        num_cols = self.num_cols()
-        if num_rows != num_cols:
-            raise ValueError("Matrix Multiplication not possible as the number of rows of the vector does not match the number of columns of the matrix.")
-        
-        
+        def num_rows_of_vector(vector):
+            max_col = 0
+            for (row, col), _ in self.data.items():
+                max_col = max(max_col, col)
+            return max_col + 1
 
-        result = [0] * num_rows
-        for (row, col), value in self.data.items():
-            result[row] += value * vector[col]
+        num_cols = self.num_cols()
+        num_rows = self.num_rows()
+        print(num_rows_of_vector)
+        if num_cols != num_rows_of_vector:
+            raise ValueError("Matrix Multiplication not possible as the number of columns of the matrix does not match the number of rows of the vector.")
+        elif num_rows_of_vector == 1:
+        # If the vector is a list, we can simply iterate over it and multiply each element by the corresponding element in the matrix.
+            result = [0] * num_rows
+            for (row, col), value in self.data.items():
+                result[row] += value * vector[col]
+        # else:
+        #     # If the vector is a matrix, we can use NumPy to perform the matrix multiplication.
+        #     result = np.matmul(self.data, vector)
         return result
 
     def add_movie(self, matrix):
