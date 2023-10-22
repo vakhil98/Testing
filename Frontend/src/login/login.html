@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="container">
+    <!-- Login Section -->
+    <div class="login-section" id="loginSection">
+        <h2>Sign in</h2>
+        <form action="/login" method="POST">
+            <input type="text" name="email" placeholder="Email">
+            <input type="password" name="password" placeholder="Password">
+            <button type="submit" class="btn-login">SIGN IN</button>
+        </form>
+        <a href="#" onclick="showResetPasswordForm()">Forgot your password?</a>
+    </div>
+
+    <!-- Signup Welcome Section -->
+    <div class="signup-section" id="welcomeMessage">
+        <h2>Hello, Friend!</h2>
+        <p>Enter your personal details and start a journey with us</p>
+        <button class="btn-signup" onclick="showSignupForm()">SIGN UP</button>
+    </div>
+
+    <!-- Signup Form Section -->
+    <div class="signup-section" id="signupForm" style="display: none;">
+        <h2>Sign Up</h2>
+        <form action="/register" method="POST">
+            <!-- Only alphabets, no numbers or special characters -->
+            <input type="text" name="first_name" placeholder="First Name" required pattern="^[A-Za-z]+$" title="Please enter alphabets only">
+            <input type="text" name="last_name" placeholder="Last Name" required pattern="^[A-Za-z]+$" title="Please enter alphabets only">
+            
+            <!-- Email validation is in-built with type="email" -->
+            <input type="email" name="email" placeholder="Email" required>
+
+            <!-- Phone number: only 10 digits -->
+            <input type="text" name="phone_number" placeholder="Phone Number" required pattern="^\d{10}$" title="Please enter a 10-digit phone number">
+            <input type="text" name="username" placeholder="Username" required>  
+
+            <input type="password" name="password" id="signupPassword" placeholder="Password" required pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,15}$" title="Password should be between 8-15 characters and contain at least one uppercase letter, one digit, and one special character" oninput="checkPasswordStrength()">
+
+            <!-- Display Password Strength -->
+            <div id="passwordStrength"></div>
+            <!-- Show Password Checkbox -->
+            <input type="checkbox" onclick="togglePasswordVisibility()"> Show Password
+            <button type="submit" class="btn-signup" id="registerButton">REGISTER</button>
+        </form>
+        <a href="#" onclick="hideSignupForm()">Cancel</a>
+    </div>
+
+    <!-- Reset Password Section -->
+    <div class="login-section" id="resetPasswordForm" style="display: none;">
+        <h2>Reset Password</h2>
+        <form action="/reset_password" method="POST">
+            <input type="email" name="reset_email" placeholder="Email" required>
+            <button type="submit" class="btn-login">RESET PASSWORD</button>
+        </form>
+        <a href="#" onclick="hideResetPasswordForm()">Cancel</a>
+    </div>
+
+    
+
+<script src="script.js"></script>
+
+</body>
+</html>

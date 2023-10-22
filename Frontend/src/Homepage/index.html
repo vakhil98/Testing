@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <!-- Meta Tags and Links -->
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Diabetes Diet Hub</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <!-- HEADER SECTION -->
+    <header class="header">
+        <!-- Logo -->
+        <div class="logo">
+            <h4>DDH</h4>
+        </div>
+
+        <!-- Navigation -->
+        <nav>
+            <ul class="nav-list">
+                <li><button onclick="performAction('home')">Home</button></li>
+                <li><button onclick="performAction('about')">About</button></li>
+                <li><button onclick="performAction('condition')">Condition</button></li>
+                <li><button onclick="performAction('supplements')">Supplements</button></li>
+                <li><button onclick="performAction('contact')">Contact</button></li>
+            </ul>
+        </nav>
+
+        <!-- Login Button -->
+        <div class="login-button" id="myButton">
+            <a href="../login/login.html">Login</a>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="content">
+        <img src="../../images/food.jpg" alt="A variety of healthy foods for a diabetic diet">
+        <!-- Introduction Section -->
+        <section class="center-text">
+            <!-- <img src="food.jpg" alt="A variety of healthy foods for a diabetic diet"> -->
+            <h1>Diabetes Diet Hub</h1>
+            <p>" Learn how to eat better and live healthier with recipes, meal plans, and articles to help you manage your diabetes deliciously every day, from EatingWell's food and nutrition experts "</p>
+        </section>
+
+         <!-- Featured Dishes Section -->
+        <section class="text">
+            <h2>Featured Dishes</h2>
+        </section>
+
+        <!-- Card Section -->
+        <section class="lower-card">
+            <!-- Card 1 -->
+            <div class="card" onclick="navigateToLogin()">
+                <img src="../../images/card1.jpeg" alt="Dish 1">
+                <h3>Unstuffed Eggroll</h3>
+                <p>Prep Time: 30 mins</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card" onclick="navigateToLogin()">
+                <img src="../../images/card2.jpeg" alt="Dish 2">
+                <h3>Oatmeal Pancakes</h3>
+                <p>Prep Time: 15 mins</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card" onclick="navigateToLogin()">
+                <img src="../../images/card3.jpeg" alt="Dish 3">
+                <h3>Low Carb Muffins</h3>
+                <p>Prep Time: 10 mins</p>
+            </div>
+        </section>
+
+        <!-- Subscribe Section -->
+        <section class="subscribe">
+            <p>Get more recipes and tips delivered right to your inbox</p>
+            <button>Subscribe</button>
+        </section>
+
+        <!-- Social -->
+        <section class="social-media">
+            <p>Follow us </p>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="fa-icon" aria-label="Follow us on Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="fa-icon" aria-label="Follow us on Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="fa-icon" aria-label="Follow us on Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </section>
+
+    </main>    
+    
+    <!-- FOOTER SECTION -->
+    <footer class="footer">
+        <!-- Copyright -->
+        <p>Copyright © 2023, Diabetes Association. All Rights Reserved.</p>
+
+        <!-- Footer Navigation -->
+        <ul>
+            <li><a href="#">Terms and Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+        </ul>
+    </footer>
+    
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body> 
+</html> 
+
+
+

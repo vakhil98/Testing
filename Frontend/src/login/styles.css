@@ -1,0 +1,74 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e6ffe6;
+}
+
+.container {
+    display: flex;
+    width: 60%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.login-section {
+    flex: 1;
+    padding: 40px;
+    background-color: #ffffff;
+}
+
+.signup-section {
+    flex: 1;
+    padding: 40px;
+    background-color: #ccffcc;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 30px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.btn-login {
+    background-color: #4dff4d;
+    color: white;
+}
+
+.btn-signup {
+    border: 2px solid black;
+    background-color: black;
+    color: white;
+}
+
+
+a {
+    color: #4dff4d;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

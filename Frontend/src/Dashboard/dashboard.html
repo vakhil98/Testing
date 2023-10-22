@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Health Metrics Dashboard | DDH</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to DDH</h1>
+        <div class="user-icon" onclick="toggleUserMenu()">
+            <img src="../../images/user.png" alt="User Icon">
+            <div class="user-menu" id="userMenu">
+                <a href="#profile">View Profile</a>
+                <a href="#settings">Settings</a>
+                <a href="#" onclick="handleLogout()">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="dashboard">
+        <h2>Your Health Metrics</h2>
+        <div id="metrics">
+        </div>
+    </section>
+    
+    <section class="diet-plan">
+        <h2>Your Custom Diet Plan</h2>
+        <div id="diet">
+        </div>
+    </section>
+    
+    <footer>
+        <!-- Footer Content: Copyrights, Links-->
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

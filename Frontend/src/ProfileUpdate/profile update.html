@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Diabetes Diet Management</title>
+</head>
+<body>
+    <div class="container">
+        <div id="diabetes-section">
+            <div class="heading">Easy to follow diabetes management diet</div>
+            <div class="btn-container">
+                <button class="btn">Type 2</button>
+                <button class="btn">Prediabetes</button>
+                <button class="btn">Type 1</button>
+                <button class="btn">I don't know</button>
+            </div>
+        </div>
+
+        <div id="gender-diet-section">
+            <div class="heading">Your diet type</div>
+            <div class="btn-container">
+                <button class="btn">Diet for women</button>
+                <button class="btn">Diet for men</button>
+            </div>
+            <button class="btn back-btn" onclick="goBackToDiabetesSection()">Back</button>
+        </div>
+
+        <div id="allergies-section">
+            <div class="heading">Select your allergies</div>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="allergies" value="None"> None</label>
+                <label><input type="checkbox" name="allergies" value="Lactose"> Lactose</label>
+                <label><input type="checkbox" name="allergies" value="Eggs"> Eggs</label>
+                <label><input type="checkbox" name="allergies" value="Nuts"> Nuts</label>
+                <label><input type="checkbox" name="allergies" value="Gluten"> Gluten</label>
+            </div>
+            <button class="btn" onclick="showPopup()">Other Allergies...</button>
+            <button class="btn next-btn" onclick="goToRelativesSection()">Next ></button>
+            <button class="btn back-btn" onclick="goBackToGenderDietSection()">Back</button>
+
+        </div>
+        
+	<!-- Relatives with Diabetes Section -->
+	<div id="relatives-section" style="display: none;">
+    		<div class="heading">Any relatives with diabetes?</div>
+    		<div class="btn-container">
+        		<button class="btn" onclick="goToBloodPressureSection()">Yes</button>
+        		<button class="btn" onclick="goToBloodPressureSection()">Not sure</button>
+        		<button class="btn" onclick="goToBloodPressureSection()">No</button>
+    		</div>
+                <button class="btn back-btn" onclick="goBackToAllergiesSection()">Back</button>
+		</div>
+
+	<!-- High Blood Pressure Section -->
+<div id="blood-pressure-section" style="display: none;">
+    <div class="heading">Diagnosed with high blood pressure?</div>
+    <div class="btn-container">
+        <button class="btn" onclick="showOtherMedicalConditionsSection()">Yes</button>
+        <button class="btn" onclick="showOtherMedicalConditionsSection()">No</button>
+    </div>
+    <button class="btn back-btn" onclick="goBackToRelativesSection()">Back</button>
+
+</div>
+
+
+        <!-- Other Medical Conditions Section  -->
+<div id="other-medical-condition-section" style="display: none;">
+    <div class="heading">Any other medical conditions?</div>
+    <div class="btn-container">
+        <button class="btn" onclick="showMedicalDetailsSection()">Yes</button>
+        <button class="btn" onclick="gotoMealssection()">No</button>
+    </div>
+    <button class="btn back-btn" onclick="goBackToBloodPressureSection()">Back</button>
+</div>
+
+<!-- Medical Details Section -->
+<div id="medical-details-section" style="display: none;">
+    <div class="heading">Select your medical conditions</div>
+    <div class="checkbox-group">
+        <label><input type="checkbox" name="conditions" value="None"> None</label>
+        <label><input type="checkbox" name="conditions" value="High Blood Pressure"> High Blood Pressure</label>
+        <label><input type="checkbox" name="conditions" value="Heart Diseases"> Heart Diseases</label>
+        <label><input type="checkbox" name="conditions" value="Gastritis"> Gastritis</label>
+        <label><input type="checkbox" name="conditions" value="Irritable Bowel Syndrome"> Irritable Bowel Syndrome</label>
+        <label><input type="checkbox" name="conditions" value="Chronic Kidney Disease"> Chronic Kidney Disease</label>
+        <label><input type="checkbox" name="conditions" value="Third-stage Kidney Disease"> WARNING: This meal plan is not suitable for Third-stage kidney disease patients.</label>
+        <label><input type="checkbox" name="conditions" value="Gastroesophageal Reflux Disease"> Gastroesophageal Reflux Disease</label>
+        <label><input type="checkbox" name="conditions" value="Anemia"> Anemia</label>
+        <label><input type="checkbox" name="conditions" value="Hypothyroidism"> Hypothyroidism</label>
+        <label><input type="checkbox" name="conditions" value="Hyperthyroidism"> Hyperthyroidism</label>
+        <label><input type="checkbox" name="conditions" value="High Cholesterol"> High Cholesterol</label>
+    </div>
+<button class="btn next-btn" onclick="gotoMealssection()">Next ></button>
+<button class="btn back-btn" onclick="goBackToOtherMedicalConditionsSection()">Back</button>
+</div>
+
+
+<!-- Meals per Day Section -->
+<div id="meals-section" style="display: none;">
+    <div class="heading">Preferable amount of meals per day</div>
+    <div class="btn-container">
+        <button class="btn" onclick="showActivitySection()">3 meals</button>
+        <button class="btn" onclick="showActivitySection()">&lt;3 meals</button>
+        <button class="btn" onclick="showActivitySection()">>3 meals</button>
+    </div>
+ <button class="btn back-btn" onclick="goBackToMedicalDetailsSection()">Back</button>
+</div>
+
+
+<!-- Physical Activity Section -->
+<div id="activity-section" style="display: none;">
+    <div class="heading">How physically active are you?</div>
+    <div class="btn-container">
+        <button class="btn" onclick="showAgeSection()">Not active</button>
+        <button class="btn" onclick="showAgeSection()">Moderately active (1-2 times per week)</button>
+        <button class="btn" onclick="showAgeSection()">Very active (3-4 times per week)</button>
+    </div>
+<button class="btn back-btn" onclick="goBackToMealsSection()">Back</button>
+</div>
+
+<!-- Age Section -->
+<div id="age-section" style="display: none;">
+    <div class="heading">Your age</div>
+    <div class="btn-container">
+        <button class="btn" onclick="showHeightSection()">70+</button>
+        <button class="btn" onclick="showHeightSection()">61-70</button>
+        <button class="btn" onclick="showHeightSection()">46-60</button>
+        <button class="btn" onclick="showHeightSection()">31-45</button>
+        <button class="btn" onclick="showHeightSection()">≤30</button>
+    </div>
+<button class="btn back-btn" onclick="goBackToActivitySection()">Back</button>
+
+</div>
+
+<!-- Height Section -->
+<div id="height-section" style="display: none;">
+    <div class="heading">Your height</div>
+    <input type="number" id="height-ft" placeholder="Feet">
+    <input type="number" id="height-in" placeholder="Inches">
+    <button class="btn next-btn" onclick="showCurrentWeightSection()">Next ></button>
+   <button class="btn back-btn" onclick="goBackToAgeSection()">Back</button>
+</div>
+
+<!-- Current Weight Section -->
+<div id="current-weight-section" style="display: none;">
+    <div class="heading">Your current weight</div>
+    <input type="number" id="current-weight-input" placeholder="Weight in lb">
+    <button class="btn next-btn" onclick="showTargetWeightSection()">Next ></button>
+    <button class="btn back-btn" onclick="goBackToHeightSection()">Back</button>
+</div>
+
+<!-- Target Weight Section -->
+<div id="target-weight-section" style="display: none;">
+    <div class="heading">Your target weight</div>
+    <input type="number" id="target-weight-input" placeholder="Enter weight in lb">
+    <button class="btn next-btn" onclick="checkWeightDifference()">Next ></button>
+    <button class="btn" onclick="endSurveyNoChange()">No change in weight</button>
+    <button class="btn back-btn" onclick="goBackToWeightSection()">Back</button>
+</div>
+
+<!-- Keep the code for the "end-of-survey-section" -->
+<div id="thank-you-message" style="display: none;">
+    <div class="heading">Thank you for taking the survey!</div>
+    <p>We appreciate your time and effort.</p>
+</div>
+
+        <!-- The modal -->
+        <div id="allergy-popup" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closePopup()">&times;</span>
+                <input type="text" id="new-allergy" placeholder="Enter other allergy">
+                <button class="btn add-btn" onclick="addCustomAllergy()">Add</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
