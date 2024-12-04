@@ -28,7 +28,6 @@ jobs:
           git config --local user.email "akhilvemulapally@gmail.com"
           git config --local user.name "vakhil98"
 
-          echo "$GH_TOKEN"
 
           # Update the wiki content
           ISSUE_TITLE=${{ github.event.issue.title }}
