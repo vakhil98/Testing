@@ -31,10 +31,10 @@ jobs:
           # Update the wiki content
           ISSUE_TITLE=${{ github.event.issue.title }}
           ISSUE_URL=${{ github.event.issue.html_url }}
-          ISSUE_BODY=${{ github.event.issue.body }}
+          # ISSUE_BODY=${{ github.event.issue.body }}
           echo "## Issue Closed: $ISSUE_TITLE" >> issue-updates.md
           echo "- [Issue Link]($ISSUE_URL)" >> issue-updates.md
-          echo "Description: $ISSUE_BODY" >> issue-updates.md
+          # echo "Description: $ISSUE_BODY" >> issue-updates.md
           echo "---" >> issue-updates.md
 
           # Commit and push changes
