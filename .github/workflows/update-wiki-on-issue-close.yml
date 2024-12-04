@@ -21,8 +21,7 @@ jobs:
         run: |
           # Clone the wiki repository
           git clone https://github.com/vakhil98/Testing.wiki.git
-          ls
-          cd $(basename issue-updates.md)
+          cd $(basename Testing.wiki)
 
           # Update the wiki content
           ISSUE_TITLE=${{ github.event.issue.title }}
