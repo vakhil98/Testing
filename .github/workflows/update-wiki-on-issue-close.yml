@@ -1,0 +1,39 @@
+name: Update Wiki on Issue Closure
+
+on:
+  issues:
+    types:
+      - closed
+
+jobs:
+  update-wiki:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Testing
+        uses: actions/checkout@v3
+
+      # Update Wiki using GitHub CLI
+      - name: Update Wiki
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          # Clone the wiki repository
+          git clone https://x-access-token:${GH_TOKEN}@github.com/${{ Testing }}.wiki.git
+          cd $(basename ${{ github.repository }}.wiki.git)
+
+          # Update the wiki content
+          ISSUE_TITLE=${{ github.event.issue.title }}
+          ISSUE_URL=${{ github.event.issue.html_url }}
+          ISSUE_BODY=${{ github.event.issue.body }}
+
+          echo "## Issue Closed: $ISSUE_TITLE" >> issue-updates.md
+          echo "- [Issue Link]($ISSUE_URL)" >> issue-updates.md
+          echo "Description: $ISSUE_BODY" >> issue-updates.md
+          echo "---" >> issue-updates.md
+
+          # Commit and push changes
+          git add issue-updates.md
+          git commit -m "Update wiki with closed issue details: $ISSUE_TITLE"
+          git push
