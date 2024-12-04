@@ -23,7 +23,11 @@ jobs:
           git clone https://github.com/vakhil98/Testing.wiki.git
           echo "Hello"
           cd $(basename Testing.wiki)
-          echo "# In the Testing Wiki Folder"
+
+          # Configure Git author identity
+          git config --local user.email "akhilvemulapally@gmail.com"
+          git config --local user.name "vakhil98"
+
           # Update the wiki content
           ISSUE_TITLE=${{ github.event.issue.title }}
           ISSUE_URL=${{ github.event.issue.html_url }}
