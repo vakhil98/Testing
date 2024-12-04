@@ -21,8 +21,9 @@ jobs:
         run: |
           # Clone the wiki repository
           git clone https://github.com/vakhil98/Testing.wiki.git
+          echo "Hello"
           cd $(basename Testing.wiki)
-          echo "# In the Testing Wiki Folder" >> issue-updates.md
+          echo "# In the Testing Wiki Folder"
           # Update the wiki content
           ISSUE_TITLE=${{ github.event.issue.title }}
           ISSUE_URL=${{ github.event.issue.html_url }}
