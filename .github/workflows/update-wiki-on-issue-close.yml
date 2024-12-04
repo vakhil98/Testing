@@ -21,7 +21,7 @@ jobs:
         run: |
           # Clone the wiki repository
           git clone https://x-access-token:${GH_TOKEN}@github.com/vakhil98/Testing.wiki.git
-          cd $(basename Testing.wiki.git)
+          cd $(basename vakhil98/Testing.wiki.git)
 
           # Update the wiki content
           ISSUE_TITLE=${{ github.event.issue.title }}
