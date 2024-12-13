@@ -40,6 +40,10 @@ jobs:
           git config --local user.name "vakhil98"
           echo "After name"
 
+          env:
+            CUSTOM_TOKEN: ${{ secrets.GH_TOKEN }}
+          run: |
+            git remote set-url origin https://vakhil98:${{ env.CUSTOM_TOKEN }}@github.com/vakhil98/Testing.wiki.git
           # Commit and push changes
           git add issue-updates.md
           git commit -m "Update wiki with closed issue details: $ISSUE_TITLE"
